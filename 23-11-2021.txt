@@ -1,0 +1,78 @@
+public class HelloWord{
+private string greeting='Hello World';
+private string greeting='Hello World';
+public void printWord()
+{
+System.debug(greeting);
+}
+}
+
+HelloWord firstClass=new HelloWord();
+firstClass.printWord();
+//system.debug(firstClass.greeting); //error as private 
+system.debug(firstClass.publicGreet);
+
+///
+HelloWord firstClass=new HelloWord();
+
+//system.debug(firstClass.greeting); //error as private 
+//system.debug(firstClass.publicGreet);
+/*
+firstClass.printWord();
+firstClass.printGoodMorning();
+firstClass.printGoodAfternoon();
+firstClass.printGoodEvening();
+
+firstClass.printMessage('Good Morning');
+firstClass.printMessage('Good Afternoon');
+firstClass.printMessage('Good Evening');
+
+system.debug(firstClass.printDay(0));
+system.debug(firstClass.printDay(1));
+system.debug(firstClass.printDay(5));
+system.debug(firstClass.printDay(10));
+*/
+system.debug(firstClass.printDay('10'));
+system.debug(firstClass.printDay('Sun'));
+
+//
+public class Covid19 {
+    public Integer recoveredInArea = 0;
+    //static variable
+    public static Integer recoveredInCountry = 0;
+
+
+    public void treatPatient(){
+        recoveredInArea++;
+        recoveredInCountry++;
+    }
+
+    // static method
+    public static void printTreated(){
+        System.debug('Recovered in country : '+recoveredInCountry);
+    }
+
+    //static block
+    static {
+
+    }
+}
+
+Covid19 jaipur = new Covid19();
+
+System.debug('Recoverd in jaipur : '+jaipur.recoveredInArea);
+Covid19.printTreated();
+//System.debug('Recoverd in country : '+Covid19.recoveredInCountry);
+
+jaipur.treatPatient();
+
+System.debug('Recoverd in jaipur : '+jaipur.recoveredInArea);
+Covid19.printTreated();
+//System.debug('Recoverd in country : '+Covid19.recoveredInCountry);
+
+Covid19 hyd = new Covid19();
+hyd.treatPatient();
+
+System.debug('Recoverd in hyd : '+hyd.recoveredInArea);
+Covid19.printTreated();
+//System.debug('Recoverd in country : '+Covid19.recoveredInCountry);
